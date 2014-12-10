@@ -1,4 +1,4 @@
-<h3>Laporan Shift</h3>
+<h3><strong>Laporan Shift</strong></h3>
 <?php
 echo anchor('laporanshift/post', 'Tambah Data', array('class'=>'btn btn-danger btn-sm'));
 ?>

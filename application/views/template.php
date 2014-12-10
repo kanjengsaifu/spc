@@ -21,8 +21,9 @@
         <!-- Custom styles for this template -->
         <link href="navbar-static-top.css" rel="stylesheet">
 
-        <script src="<?php echo base_url() ;?>assets/js/jquery.min.js"></script>
-        <script src="<?php echo base_url() ;?>assets/js/bootstrap.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
+        <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
+   
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -62,7 +63,7 @@
                         </li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="acttive"><?php echo anchor('auth/logout', 'Logout'); ?></li></li>
+                        <li><?php echo anchor('auth/logout', 'Logout'); ?></li></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
@@ -75,6 +76,9 @@
 
         </div> <!-- /container -->
 
+
    
+
+
     </body>
 </html>

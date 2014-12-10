@@ -97,26 +97,34 @@
     });
 
 </script>
+<script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
 
-<h3>Tambah Data Laporan Produksi</h3>
+<script src="<?php echo base_url(); ?>assets/js/datepicker.js"></script>
+
+
+<h3><strong>Tambah Data Laporan Produksi</strong></h3><hr>
 <?php
 echo form_open('laporanshift/post');
 date_default_timezone_set("Asia/Jakarta");
 ?>
+<div class="form-group">      	
+    <label class="col-sm-1 control-label">Tanggal :</label>
+    <div class="col-sm-3"> 
+        <div id="datepickers" class="input-group date" data-date="" data-date-format="dd-mm-yy">
+            <input class="form-control" type="text" placeholder="<?php echo date('d-m-y'); ?>" disabled>
+            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+        </div>
+    </div>
+</div>
+<br><br>
 
 <table class="table table-bordered">
-    <tr><td>Tanggal :</td>
-        <td id="datepickers"  data-date="" data-date-format="dd-mm-yyyy"> 
-            <input type="text" name="tanggal" placeholder="<?php echo date("dd-mm-yyyy"); ?>" 
-                    class="form-control" disabled>
-            <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-        </td>
-        <td>Shift :</td>
+    <tr><td>Shift :</td>
         <td> <input type="text" name="shift" placeholder="shift" class="form-control"></td>
         <td>line :</td>
         <td> <input type="text" name="line" placeholder="line" class="form-control"></td>
         <td>motif</td>
-        <td colspan="2"> <input type="text" name="motif" placeholder="motif" class="form-control"></td>
+        <td colspan="5"> <input type="text" name="motif" placeholder="motif" class="form-control"></td>
 
     </tr>
     <tr class="success">
@@ -146,10 +154,6 @@ date_default_timezone_set("Asia/Jakarta");
 </table>
 </form>
 
-
-<script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
-
-<script src="<?php echo base_url(); ?>assets/js/datepicker.js"></script>
 <script>
 //options method for call datepicker
     $("#datepickers").datepicker({autoclose: true, todayHighlight: true});
