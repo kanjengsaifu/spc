@@ -23,7 +23,7 @@
 
         <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
         <script src="<?php echo base_url(); ?>assets/js/bootstrap.min.js"></script>
-   
+
 
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -76,9 +76,14 @@
 
         </div> <!-- /container -->
 
-
-   
-
-
+        <div class="navbar navbar-default navbar-fixed-bottom navbar-min"> 
+            <div class="navbar-inner"> 
+                <div class="container">
+                    <footer class="well-sm">
+                        <strong>@copyright by Majid Abdullah</strong>
+                    </footer>
+                </div>
+            </div>                        
+        </div>
     </body>
 </html>

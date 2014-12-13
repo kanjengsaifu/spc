@@ -1,6 +1,6 @@
 <h3><strong>Laporan Shift</strong></h3>
 <?php
-echo anchor('laporanshift/post', 'Tambah Data', array('class'=>'btn btn-danger btn-sm'));
+echo anchor('laporanshift/post', 'Tambah Data', array('class'=>'btn btn-primary btn-sm'));
 ?>
 <hr>
 <table class="table table-bordered">

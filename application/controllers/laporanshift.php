@@ -15,6 +15,17 @@ class laporanshift extends CI_Controller {
 
     function post() {
         if (isset($_POST['submit'])) {
+            $this->form_validation->set_rules('tgllaporanshift', 'Tgllaporanshift', 'trim|required');
+            $this->form_validation->set_rules('shift', 'Shift', 'trim|required|numeric');
+            $this->form_validation->set_rules('line', 'Line', 'trim|required|numeric');
+            $this->form_validation->set_rules('motif', 'Motif', 'trim|required|min_length[1]|max_length[50]|xss_clean');
+            $this->form_validation->set_rules('kw1s', 'Kw1s', 'trim|required|numeric');
+            $this->form_validation->set_rules('kw1m', 'Kw1m', 'trim|required|numeric');
+            $this->form_validation->set_rules('kw1l', 'Kw1l', 'trim|required|numeric');
+            $this->form_validation->set_rules('kw2s', 'Kw2s', 'trim|required|numeric');
+            $this->form_validation->set_rules('kw2m', 'Kw2m', 'trim|required|numeric');
+            $this->form_validation->set_rules('kw2l', 'Kw2l', 'trim|required|numeric');
+
             $tgllaporanshift = $this->input->post('tgllaporanshift', true);
             $shift = $this->input->post('shift', true);
             $line = $this->input->post('line', true);
@@ -31,7 +42,7 @@ class laporanshift extends CI_Controller {
             $rendreject = $this->input->post('rendreject', true);
             $data = array(
                 'tgllaporanshift' => $tgllaporanshift,
-                'shift' => shift,
+                'shift' => $shift,
                 'line' => $line,
                 'motif' => $motif,
                 'kw1s' => $kw1s,
@@ -45,8 +56,12 @@ class laporanshift extends CI_Controller {
                 'reject' => $reject,
                 'rendreject' => $rendreject
             );
-            $this->db->insert('laporanshift', $data);
-            redirect('laporanshift');
+            if ($this->form_validation->run() == TRUE) {
+                $this->db->insert('laporanshift', $data);
+                redirect('laporanshift');
+            } else {
+                $this->template->load('template', 'laporanshift/inputdata');
+            }
         } else {
 //            $this->load->view('laporanshift/inputdata');
             $this->template->load('template', 'laporanshift/inputdata');

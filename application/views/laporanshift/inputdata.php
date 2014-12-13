@@ -98,20 +98,22 @@
 
 </script>
 <script src="<?php echo base_url(); ?>assets/js/jquery.min.js"></script>
-
 <script src="<?php echo base_url(); ?>assets/js/datepicker.js"></script>
-
 
 <h3><strong>Tambah Data Laporan Produksi</strong></h3><hr>
 <?php
 echo form_open('laporanshift/post');
 date_default_timezone_set("Asia/Jakarta");
 ?>
+<div>
+<?php echo validation_errors('<p class="well">');?>
+</div>
 <div class="form-group">      	
+   
     <label class="col-sm-1 control-label">Tanggal :</label>
     <div class="col-sm-3"> 
         <div id="datepickers" class="input-group date" data-date="" data-date-format="dd-mm-yy">
-            <input class="form-control" type="text" placeholder="<?php echo date('d-m-y'); ?>" disabled>
+            <input name="tgllaporanshift" class="form-control" type="text" value="<?php echo date('d-m-y');?>" disabled>
             <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
         </div>
     </div>
@@ -151,8 +153,13 @@ date_default_timezone_set("Asia/Jakarta");
         <td> <input type="text" name="reject" placeholder="reject" class="form-control" id="reject"></td>
         <td> <input type="text" name="rendreject" placeholder="rdrjct" class="form-control" readonly="readonly" id="rendreject"></td>
     </tr>
+    <tr class="success">
+        <th  colspan="10"><button type="submit" name="submit" class="btn btn-primary">Simpan</button></th>
+    </tr>
 </table>
 </form>
+<br>
+<br>
 
 <script>
 //options method for call datepicker
