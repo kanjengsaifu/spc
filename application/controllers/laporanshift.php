@@ -56,6 +56,7 @@ class laporanshift extends CI_Controller {
                 'reject' => $reject,
                 'rendreject' => $rendreject
             );
+//             die($tgllaporanshift);
             if ($this->form_validation->run() == TRUE) {
                 $this->db->insert('laporanshift', $data);
                 redirect('laporanshift');

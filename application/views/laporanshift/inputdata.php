@@ -107,13 +107,14 @@ date_default_timezone_set("Asia/Jakarta");
 ?>
 <div>
 <?php echo validation_errors('<p class="well">');?>
+  
 </div>
 <div class="form-group">      	
    
     <label class="col-sm-1 control-label">Tanggal :</label>
     <div class="col-sm-3"> 
-        <div id="datepickers" class="input-group date" data-date="" data-date-format="dd-mm-yy">
-            <input name="tgllaporanshift" class="form-control" type="text" value="<?php echo date('d-m-y');?>" disabled>
+        <div id="datepickers" class="input-group date" data-date="" data-date-format="yyyy-mm-dd">
+            <input name="tgllaporanshift" class="form-control" type="text" value="<?php echo date("Y-m-d");?>" readonly>
             <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
         </div>
     </div>
