@@ -69,4 +69,17 @@ class laporanshift extends CI_Controller {
         }
     }
 
+    function delete() {
+        $id = $this->uri->segment(3);
+        $this->model_laporanshift->deletelaporanshift($id);
+        redirect('laporanshift');
+    }
+
+    function laporan() {
+        $data['record']=  $this->model_laporanshift->laporanbydate();
+        $this->template->load('template', 'laporanshift/laporan', $data);
+    
+        
+    }
+
 }
