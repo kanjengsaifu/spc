@@ -16,12 +16,14 @@ class auth extends CI_Controller {
                 //update last login
                 $this->db->where('username', $username);
                 $this->db->update('operator', array('lastlogin' => date('Y-m-d')));
-                $this->session->set_userdata(array('status_login' => 'oke'));
-                redirect('dashboard');
+//                 $this->session->set_userdata('pencarian_dosen', $data['nama']);
+                redirect('laporanshift/lihatdata');
             } else {
+//                $data['nama'] = $this->session->userdata('pencarian_dosen');
                 redirect('auth/login');
             }
         } else {
+            check_session_login();
             $this->load->view('form_login');
         }
     }
